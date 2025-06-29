@@ -1,0 +1,312 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #fd60b9, #b5ecf4);
+  color: #333;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.hidden {
+  display: none;
+}
+
+canvas#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 1.2rem;
+  text-shadow: 2px 2px #ff80ab;
+}
+
+.hero button {
+  padding: 1rem 2.5rem;
+  background: #ffffff;
+  color: #ff4081;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(255, 64, 129, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background: #ff4081;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Section Styling */
+section {
+  padding: 3rem 1.5rem;
+  margin: 1rem;
+  border-radius: 20px;
+  animation: slideInUp 1s ease;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ec407a;
+  margin-bottom: 1rem;
+}
+
+/* Letter Section */
+.letter {
+  max-width: 800px;
+  margin: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a148c;
+  background: #fff3e0;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery img {
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Slideshow */
+.slideshow-section {
+  background: #fce4ec;
+  text-align: center;
+}
+
+.slide {
+  max-width: 400px;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: opacity 1s;
+}
+
+/* List Section */
+.list-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6a1b9a;
+}
+
+.list-section ul li {
+  padding: 0.5rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Vault Section */
+.vault-section {
+  background: #ede7f6;
+  text-align: center;
+}
+
+.vault input,
+.vault button,
+button {
+  padding: 0.8rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.vault input {
+  border: 2px solid #7e57c2;
+}
+
+.vault button {
+  background: #7e57c2;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+button {
+  color: #e0f7fa;
+  background: #7e57c2;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* space between images */
+  justify-content: center;
+}
+
+ul li {
+  flex: 1 1 calc(50% - 10px); /* 2 per row on small screens */
+  max-width: calc(50% - 10px);
+}
+
+ul li img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* optional: rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optional: soft shadow */
+  object-fit: cover;
+}
+
+/* On larger screens: show 3 or 4 per row */
+@media (min-width: 600px) {
+  ul li {
+    flex: 1 1 calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+  }
+}
+
+@media (min-width: 900px) {
+  ul li {
+    flex: 1 1 calc(25% - 10px);
+    max-width: calc(25% - 10px);
+  }
+}
+
+/* Surprise */
+.surprise-section {
+  background: #fffde7;
+  text-align: center;
+}
+
+.typing {
+  font-size: 1.3rem;
+  color: #ff4081;
+  font-weight: 500;
+  padding-top: 1rem;
+}
+
+/* Poem */
+.poem {
+  background: #fff8e1;
+  max-width: 700px;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 15px;
+  color: #4e342e;
+  font-style: italic;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Timeline Container */
+.timeline {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Timeline Event Box */
+.timeline-event {
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Responsive Image Styling */
+.timeline-event img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Future & Final */
+.future-section,
+.final-section {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #37474f;
+  background: #f1f8e9;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  margin: 1rem;
+  max-width: 900px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .gallery img {
+    width: 150px;
+  }
+  .slide {
+    width: 90%;
+  }
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+}

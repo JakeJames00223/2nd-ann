@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Fay, From Jay ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+  </head>
+  <body>
+    <!-- Background Animation -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Landing Page -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1><span id="typed"></span></h1>
+        <button onclick="enterSite()">Enter Our Love Story</button>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="hidden">
+      <section class="letter-section">
+        <h2>Dear Fay,</h2>
+        <p class="letter">
+          From the first message to this moment, every second with you has been
+          magic. You taught me how distance means nothing when someone means
+          everything. Your laugh is my favorite sound. Your smile is my favorite
+          view. Your love is my favorite feeling.
+        </p>
+        <p class="letter">
+          This is not just a website, it's a memory. A tiny digital planet where
+          our love will live forever. Happy Anniversary my love. Forever yours,
+          Jay. 💖
+        </p>
+      </section>
+
+      <section class="gallery-section">
+        <h2>Our Memories</h2>
+        <div class="gallery">
+          <img src="images/photo1.jpg" alt="Memory 1" />
+          <img src="images/photo2.jpg" alt="Memory 2" />
+          <img src="images/photo3.jpg" alt="Memory 3" />
+        </div>
+      </section>
+
+      <section class="slideshow-section">
+        <h2>Moments That Moved Us</h2>
+        <div class="slideshow">
+          <img src="images/slide1.jpg" class="slide" />
+          <img src="images/slide2.jpg" class="slide hidden" />
+          <img src="images/slide3.jpg" class="slide hidden" />
+          <img src="images/slide4.png" class="slide hidden" />
+          <img src="images/slide5.jpg" class="slide hidden" />
+          <img src="images/slide6.jpg" class="slide hidden" />
+          <img src="images/slide7.jpg" class="slide hidden" />
+          <img src="images/slide8.jpg" class="slide hidden" />
+          <img src="images/slide9.jpg" class="slide hidden" />
+          <img src="images/slide10.jpg" class="slide hidden" />
+          <img src="images/slide11.jpg" class="slide hidden" />
+          <img src="images/slide12.jpg" class="slide hidden" />
+          <img src="images/slide13.jpg" class="slide hidden" />
+          <img src="images/slide15.jpg" class="slide hidden" />
+          <img src="images/slide14.jpg" class="slide hidden" />
+        </div>
+      </section>
+
+      <section class="list-section">
+        <h2>10 Things I Love About You</h2>
+        <ul id="loveList"></ul>
+      </section>
+
+      <section class="vault-section">
+        <h2>The Vault of Memories 🔐</h2>
+        <div class="vault">
+          <p>
+            These memories are hidden behind your smile. Click below to unlock
+            the vault.
+          </p>
+          <input
+            type="password"
+            id="vaultInput"
+            placeholder="Hint: The nickname you gave me"
+          />
+          <button onclick="unlockVault()">Unlock</button>
+          <div id="vaultContent" class="hidden">
+            <ul>
+              <li><img src="images/hide1.jpg" /></li>
+              <li><img src="images/hide2.jpg" /></li>
+              <li><img src="images/hide3.jpg" /></li>
+              <li><img src="images/hide4.jpg" /></li>
+              <li><img src="images/hide5.png" /></li>
+              <li><img src="images/hide6.jpg" /></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="surprise-section">
+        <h2>I Have a Surprise 💝</h2>
+        <button onclick="showSurprise()">Click Me</button>
+        <div id="surpriseMessage" class="hidden">
+          <p class="typing"></p>
+        </div>
+      </section>
+
+      <section class="poem-section">
+        <h2>A Poem Just for You</h2>
+        <div class="poem">
+          <p>In every star I see your light,</p>
+          <p>In every dream, you hold me tight.</p>
+          <p>No distance ever dims our flame,</p>
+          <p>Fay & Jay — one perfect name.</p>
+        </div>
+      </section>
+
+      <section class="timeline-section">
+        <h2>Our Journey Timeline</h2>
+        <div class="timeline">
+          <div class="timeline-event">
+            <img src="images/2.jpg" alt="First message exchanged" />
+          </div>
+          <div class="timeline-event">
+            <img src="images/1.jpeg" alt="First call" />
+          </div>
+          <div class="timeline-event">
+            <img src="images/3.jpg" alt="First argument and makeup" />
+          </div>
+          <div class="timeline-event">
+            <img src="images/4.jpg" alt="Planning our future" />
+          </div>
+        </div>
+      </section>
+
+      <section class="future-section">
+        <h2>Our Future Together</h2>
+        <p>
+          Imagine this: A home filled with laughter, two mugs on a table — one
+          says "Jay", the other "Fay". Travel plans, silly dances, a garden, a
+          wedding. It's all real. Just waiting for us. 💍
+        </p>
+      </section>
+
+      <section class="final-section">
+        <h2>This is Not the End...</h2>
+        <p>
+          It's the beginning of forever. I promise to make every moment we share
+          full of love, laughter, and adventure. I love you endlessly, Fay. ❤️
+        </p>
+      </section>
+    </main>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+      <source src="music/love-song.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const typed = new Typed("#typed", {
+        strings: ["Happy Anniversary Fay ❤️", "From Jay, With All My Love 💌"],
+        typeSpeed: 50,
+        backSpeed: 25,
+        loop: true,
+      });
+
+      const confettiSettings = {
+        target: "confetti",
+        max: 150,
+        size: 1.2,
+        animate: true,
+      };
+      const confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+
+      function enterSite() {
+        document.querySelector(".hero").style.display = "none";
+        document.getElementById("mainContent").classList.remove("hidden");
+        document.getElementById("bgMusic").play();
+
+        const listItems = [
+          "Your radiant smile 😍",
+          "The way you say 'Jay' 💘",
+          "Your strength and kindness 💪",
+          "Your cute voice 🥰",
+          "The way you make me feel safe 🛡️",
+          "How you listen and understand 💬",
+          "Your warm heart 💖",
+          "Our inside jokes 😂",
+          "Your love that never fails 🫶",
+          "Everything about you ❤️",
+        ];
+
+        const list = document.getElementById("loveList");
+        listItems.forEach((item, index) => {
+          setTimeout(() => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            list.appendChild(li);
+          }, index * 600);
+        });
+
+        let slides = document.querySelectorAll(".slide");
+        let currentSlide = 0;
+        setInterval(() => {
+          slides[currentSlide].classList.add("hidden");
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.remove("hidden");
+        }, 2500);
+      }
+
+      function showSurprise() {
+        const surprise = document.getElementById("surpriseMessage");
+        surprise.classList.remove("hidden");
+        const msg =
+          "There is so much more waiting for us. More memories. More laughs. More love. And one day... no more distance 💍";
+        let i = 0;
+        const typing = document.querySelector(".typing");
+        typing.textContent = "";
+        const typeInterval = setInterval(() => {
+          typing.textContent += msg[i];
+          i++;
+          if (i === msg.length) clearInterval(typeInterval);
+        }, 60);
+      }
+
+      function unlockVault() {
+        const input = document.getElementById("vaultInput").value.toLowerCase();
+        if (input === "jay") {
+          document.getElementById("vaultContent").classList.remove("hidden");
+        } else {
+          alert("Try again my love 🥹. It’s something sweet and simple!");
+        }
+      }
+    </script>
+  </body>
+</html>
